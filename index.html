@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Carrega o React, React Dom e Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const Button = () => {
+        return <button> Comprar </button>
+      }
+
+      const   MainNav = () => {
+        return <nav>
+          <ul> 
+            <li> <a href="#"> Link 1 </a> </li>
+            <li> <a href="#"> Link 2 </a> </li>
+          </ul>        
+        </nav>
+      }
+
+      const Produtos = () => {
+        const produto1 = "Camisa";
+        const produto2 = "Calça";
+
+        function handleClick(event) {
+          console.log(event);
+        }
+
+        return  <div>
+          <button onClick={handleClick}>{produto1} R$ {Math.random() * 100}</button>
+          <button>{produto2}</button>
+        </div>
+      }
+    
+      const App = () => {
+        return <div> 
+          <h1> Aplicativo Idiomas </h1>
+          <MainNav />
+          <Produtos />
+          <Button />
+          </div>;
+      }
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+
+    </script>
+  </body>
+</html>
