@@ -1,0 +1,19 @@
+Front-End & React: 
+ https://www.origamid.com/curso/react-completo/
+
+Java & SpringBoot:
+ https://www.udemy.com/course/java-curso-completo
+
+Q.A Java 
+ https://www.udemy.com/course/java-unit-testing-com-java-spring-boot-3-junit-5-e-mockito/
+
+Q.A React 
+ https://www.udemy.com/course/react-testing-library-and-jest/ 
+ https://www.udemy.com/course/testes-automatizados-com-cypress-basico/
+
+Youtube
+ Java- https://www.youtube.com/watch?v=sTX0UEplF54&list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR
+
+AWS
+ https://explore.skillbuilder.aws/learn
+ https://www.udemy.com/course/aws-na-pratica/?couponCode=24T7MT123024
