@@ -43,19 +43,18 @@
 /* Ajuste o tamanho para telas menores */
 @media (max-width: 1600px) {
     .logoWrite {
-        font-size: 1.5rem; /* Reduza o tamanho conforme necessário */
+        font-size: 1.5rem;
     }
 }
 
-/* Para telas ainda menores, como 1200px, você pode adicionar outro ajuste */
 @media (max-width: 1200px) {
     .logoWrite {
-        font-size: 1rem; /* Outro ajuste, se necessário */
+        font-size: 1rem; 
     }
 }
 @media (max-width: 1050px) {
     .logoWrite {
-        font-size: 0.9rem; /* Outro ajuste, se necessário */
+        font-size: 0.9rem; 
     }
 }
 @media (max-width: 1000px) {
