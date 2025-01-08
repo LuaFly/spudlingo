@@ -47,7 +47,7 @@ const header = () => {
                         Home
                     </Link>
                     <Link to ="/courses">
-                        Cursos
+                        Idiomas
                     </Link>
                     <Link to ="/aboutUs">
                         Quem somos
