@@ -1,0 +1,130 @@
+.register-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    max-width: 97vw;
+    color: #3f4640;
+    padding: 20px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 8px 20px rgba(36, 63, 45, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .register-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 600px;
+    margin-right: 10%;
+  }
+  
+  .register-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    color: #2C4B4B;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .register-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #668677;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .register-button {
+    background: linear-gradient(90deg, #F75C9C, #F78D6C);
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-button:hover {
+    background: linear-gradient(90deg, #ED9FB5, #F7A67E);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .register-text {
+    font-size: 1rem;
+    color: #4A6A6A;
+    margin-top: 16px;
+  }
+  
+  .register-login-link {
+    color: #F75C9C;
+    font-weight: bold;
+  }
+  
+  .register-image-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .register-image {
+    width: 25vw;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .register-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .register-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      max-width: 100vw;
+      margin-top: 0;
+      padding: 16px;
+    }
+  
+    .register-text-wrapper {
+      margin-right: 0;
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .register-image-wrapper {
+      margin-top: 20px;
+    }
+  
+    .register-image {
+      width: 60vw;
+    }
+  
+    .register-button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+    }
+  }
+  
