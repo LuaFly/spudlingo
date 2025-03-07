@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&display=swap');
+
+.header {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: #ED9FB5;
+    top: 0px;
+  }
+
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+  .nav a {
+    color: #3f4640;
+  }
+  
+  .logo {
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 100%; 
+    width: auto; 
+}
+.logoWrite{
+    font-family: 'Agu Display', sans-serif;
+    font-size: 2rem;
+  }
+
+
+/* Ajuste o tamanho para telas menores */
+@media (max-width: 1600px) {
+    .logoWrite {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .logoWrite {
+        font-size: 1rem; 
+    }
+}
+@media (max-width: 1050px) {
+    .logoWrite {
+        font-size: 0.9rem; 
+    }
+}
+@media (max-width: 1000px) {
+    .logoWrite {
+        display: none; /* Esconde o texto */
+    }
+}
+  .center {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-grow: 1;    
+}
+  .login {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+  .criar {
+    margin-left: 0.5rem;
+  }
+
+  .login::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    background: url('../../assets/usuario.svg') no-repeat center center;
+    margin-left: 0px;
+    position: relative;
+    top: -1px;
+    font-weight: 600;
+  }
+  
