@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="flags-container">
                     <img src={flag1} alt="Bandeira Inglês" className="flag-image" />
                     <img src={flag2} alt="Bandeira Mandarim" className="flag-image" />
-                    <img src={flag3} alt="Bandeira Finlandês" className="flag-image" />
+                    {/* <img src={flag3} alt="Bandeira Finlandês" className="flag-image" /> */}
                     <img src={flag4} alt="Bandeira Espanhol" className="flag-image" />
                     <img src={flag5} alt="Bandeira Potuguês" className="flag-image" />
                 </div>

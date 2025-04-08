@@ -19,3 +19,14 @@ CREATE TABLE usuarios (
     role ENUM('estudante', 'professor') NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+<br>
+Criar a tabela abaixo:
+CREATE TABLE user_languages (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL,
+  language_code VARCHAR(5) NOT NULL,
+  level VARCHAR(50) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES usuarios(user_id)
+);
