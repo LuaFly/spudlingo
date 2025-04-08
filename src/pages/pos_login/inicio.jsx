@@ -1,11 +1,11 @@
 import React from "react";
-import '../styles/home.css';
-import homePage from '../assets/home.jpeg';
-import flag1 from '../assets/flag1.jpg';
-import flag2 from '../assets/flag2.png';
-import flag3 from '../assets/flag3.png';
-import flag4 from '../assets/flag4.png';
-import flag5 from '../assets/flag5.png';
+import '../../styles/home.css';
+import homePage from '../../assets/home.jpeg';
+import flag1 from '../../assets/flag1.jpg';
+import flag2 from '../../assets/flag2.png';
+import flag3 from '../../assets/flag3.png';
+import flag4 from '../../assets/flag4.png';
+import flag5 from '../../assets/flag5.png';
 
 const Inicio = () => {
     return (
