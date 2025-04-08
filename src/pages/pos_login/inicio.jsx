@@ -94,6 +94,8 @@ const Inicio = () => {
                         value={nivel}
                         onChange={(e) => setNivel(e.target.value)}
                     >
+
+                        <option value="">Escolha o nível</option>
                         <option value="Iniciante">Iniciante</option>
                         <option value="Intermediário">Intermediário</option>
                         <option value="Avançado">Avançado</option>
