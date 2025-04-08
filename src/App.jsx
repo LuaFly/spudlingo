@@ -2,8 +2,9 @@ import React from "react";
 import './App.css';
 import Header from './components/header/header'; 
 import Home from './pages/home'; 
+import Inicio from './pages/inicio'; 
 import Login from './pages/login/login';
-import Register from './pages/cadastro/cadastrar'; 
+import Cadastrar from './pages/cadastro/cadastrar'; 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 
@@ -15,7 +16,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} /> 
                     <Route path="/login" element={<Login />} /> 
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/inicio" element={<Inicio />} /> 
+                    <Route path="/cadastrar" element={<Cadastrar />} />
                 </Routes>
             </BrowserRouter>
         </div>
