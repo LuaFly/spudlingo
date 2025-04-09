@@ -8,6 +8,7 @@ import Cadastrar from './pages/cadastro/cadastrar';
 import Feed from "./pages/pos_login/feed";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import PrivateRoute from './components/PrivateRoute'; // <== importa aqui
 
 function App() {
     return (
@@ -17,9 +18,25 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} /> 
                     <Route path="/login" element={<Login />} /> 
-                    <Route path="/inicio" element={<Inicio />} /> 
-                    <Route path="/feed" element={<Feed />} /> 
                     <Route path="/cadastrar" element={<Cadastrar />} />
+
+                    {/* Rotas protegidas */}
+                    <Route 
+                        path="/inicio" 
+                        element={
+                            <PrivateRoute>
+                                <Inicio />
+                            </PrivateRoute>
+                        } 
+                    />
+                    <Route 
+                        path="/feed" 
+                        element={
+                            <PrivateRoute>
+                                <Feed />
+                            </PrivateRoute>
+                        } 
+                    />
                 </Routes>
             </BrowserRouter>
         </div>
