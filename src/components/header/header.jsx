@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './header.module.css';
 import { Link, useNavigate } from "react-router-dom";
 import logoMenu from '../../assets/lateral1.jpeg';
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const [isOpen, setIsOpen] = useState(false);
 
   const text = "SpudLingo";
   const colors = [
@@ -27,10 +29,7 @@ const Header = () => {
             {text.split("").map((letter, index) => (
               <span
                 key={index}
-                style={{
-                  color: colors[index],
-                  display: "inline-block",
-                }}
+                style={{ color: colors[index], display: "inline-block" }}
               >
                 {letter}
               </span>
@@ -38,6 +37,31 @@ const Header = () => {
           </p>
         </Link>
 
+        {/* Botão hamburguer visível só em mobile */}
+        <button
+          className={styles.menuToggle}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir/Fechar menu"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} color="#3f4640"/>}
+        </button>
+
+        {/* Menu mobile */}
+        {isOpen && (
+          <div className={styles.mobileMenu}>
+            <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/courses" onClick={() => setIsOpen(false)}>Idiomas</Link>
+            <Link to="/aboutUs" onClick={() => setIsOpen(false)}>Quem somos</Link>
+            <Link to="/Shop" onClick={() => setIsOpen(false)}>Shop</Link>
+            {!token ? (
+              <Link to="/login" onClick={() => setIsOpen(false)}>Entrar / Criar</Link>
+            ) : (
+              <button onClick={() => { setIsOpen(false); handleLogout(); }}>Sair</button>
+            )}
+          </div>
+        )}
+
+        {/* Menu desktop*/}
         <div className={styles.center}>
           <Link to="/">Home</Link>
           <Link to="/courses">Idiomas</Link>
@@ -45,7 +69,6 @@ const Header = () => {
           <Link to="/Shop">Shop</Link>
         </div>
 
-        {/* Aqui troca o botão dependendo do login */}
         {!token ? (
           <Link className={styles.login} to="/login">
             Entrar / Criar

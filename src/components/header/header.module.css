@@ -53,6 +53,8 @@
   .logout:hover {
     color: #c0392b;
   }
+
+  
 /* Ajuste o tamanho para telas menores */
 @media (max-width: 1600px) {
     .logoWrite {
@@ -99,5 +101,79 @@
     position: relative;
     top: -1px;
     font-weight: 600;
+  }
+  
+  @media (max-width: 700px) {
+    .center {
+      display: none;
+    }
+  
+    .login {
+      display: none;
+    }
+    .nav {
+      display: flex;
+      justify-content: flex-end; /* Move o conteúdo para a direita */
+      align-items: center;
+      padding: 10px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      
+    }
+    
+    .logo img {
+      height: 100%; 
+      width: auto; 
+    }
+    
+    .menuToggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+      color: #3f4640;
+    }
+  
+    .mobileMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 100vh;
+      background-color: #ED9FB5;
+      padding: 4rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      z-index: 105;
+      animation: slideIn 0.3s ease-in-out;
+    }
+  
+    .mobileMenu a,
+    .mobileMenu button {
+      background: none;
+      border: none;
+      color: #3f4640;
+      font-size: 1.1rem;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+  
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
   }
   
