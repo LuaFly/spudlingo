@@ -4,6 +4,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"; // <-- Importa JWT
 import db from "./db.js";
 import formIdiomaRoutes from "./form_idioma.js";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const app = express();
 app.use(express.json());
@@ -11,8 +14,7 @@ app.use(cors());
 
 app.use("/", formIdiomaRoutes);
 
-const SECRET_KEY = "sua_chave_secreta_super_segura"; // ideal colocar em variável de ambiente (.env)
-
+const SECRET_KEY = process.env.JWT_SECRET;
 // Rota de cadastro
 app.post('/cadastrar', async (req, res) => {
     const { username, email, senha } = req.body;
@@ -68,10 +70,11 @@ app.post('/login', (req, res) => {
 
             // Gera token JWT
             const token = jwt.sign(
-                { id: usuario.id, email: usuario.email },
+                { id: usuario.user_id, email: usuario.email },
                 SECRET_KEY,
                 { expiresIn: '1h' }
             );
+            
 
             res.json({
                 msg: "Login bem-sucedido!",
