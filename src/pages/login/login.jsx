@@ -9,6 +9,27 @@ function Login() {
   const [mensagem, setMensagem] = useState('');
   const navigate = useNavigate();
 
+  // ✅ Verifica se o usuário já tem idioma cadastrado
+  const verificarIdioma = async (token) => {
+    try {
+      const res = await axios.get("http://localhost:8344/check_idioma", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (res.data.hasLanguage) {
+        navigate("/feed"); // redireciona para o feed
+      } else {
+        navigate("/inicio"); // redireciona para escolher o idioma
+      }
+    } catch (err) {
+      console.error("Erro ao verificar idioma:", err);
+      navigate("/inicio"); // fallback
+    }
+  };
+
+  // ✅ Login + verificação do idioma
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -20,11 +41,11 @@ function Login() {
       setMensagem(res.data.msg);
       console.log("Resposta do login:", res.data);
 
-      // ✅ Salvando token e dados do usuário no localStorage
-      localStorage.setItem("token", res.data.token);
+      const token = res.data.token;
+      localStorage.setItem("token", token);
       localStorage.setItem("usuario", JSON.stringify(res.data.usuario));
 
-      navigate('/inicio');
+      verificarIdioma(token); // ⬅️ Verifica se já escolheu idioma
     })
     .catch(err => {
       setMensagem("Erro ao fazer login. Verifique seus dados.");
