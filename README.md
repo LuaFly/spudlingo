@@ -1,6 +1,8 @@
 Para rodar a aplicação com o back: 
 
 npm install @react-oauth/google jwt-decode express mysql cors axios bcrypt jsonwebtoken dotenv
+npm install chalk
+npm install jwt-decode
 
 node login.js (deixar rodando em outro terminal enquanto a aplicação funciona dentro da pasta back)
 
