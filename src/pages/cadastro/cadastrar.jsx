@@ -34,7 +34,7 @@ function Register() {
       }, 2000); // Pequeno delay para mostrar a mensagem antes de redirecionar
     })
     .catch(err => {
-      setMensagem("Erro ao cadastrar. Tente novamente.");
+      setMensagem("Erro ao cadastrar.");
       console.error(err);
     });
   }
@@ -70,7 +70,12 @@ function Register() {
           />
           <button type="submit" className="register-button">Cadastrar</button>
         </form>
-        {mensagem && <p className="error-message">{mensagem}</p>}
+        <div className="cadastro-mensagem-wrapper">
+          <p className="cadastro-mensagem">
+            {mensagem || "\u00A0"}
+          </p>
+        </div>
+
         <p className="register-text">
           Já tem uma conta? <Link to="/login" className="register-login-link">Entrar</Link>
         </p>

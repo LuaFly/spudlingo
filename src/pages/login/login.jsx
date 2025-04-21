@@ -9,7 +9,7 @@ function Login() {
   const [mensagem, setMensagem] = useState('');
   const navigate = useNavigate();
 
-  // ✅ Verifica se o usuário já tem idioma cadastrado
+  //  Verifica se o usuário já tem idioma cadastrado
   const verificarIdioma = async (token) => {
     try {
       const res = await axios.get("http://localhost:8344/check_idioma", {
@@ -29,7 +29,7 @@ function Login() {
     }
   };
 
-  // ✅ Login + verificação do idioma
+  // Login + verificação do idioma
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -45,10 +45,10 @@ function Login() {
       localStorage.setItem("token", token);
       localStorage.setItem("usuario", JSON.stringify(res.data.usuario));
 
-      verificarIdioma(token); // ⬅️ Verifica se já escolheu idioma
+      verificarIdioma(token); 
     })
     .catch(err => {
-      setMensagem("Erro ao fazer login. Verifique seus dados.");
+      setMensagem("Usuário/senha incorretos.");
       console.error(err);
     });
   }
@@ -72,7 +72,12 @@ function Login() {
           />
           <button type="submit" className="login-button">Entrar</button>
         </form>
-        {mensagem && <p>{mensagem}</p>}
+        <div className="login-mensagem-wrapper">
+          <p className="login-mensagem">
+            {mensagem || "\u00A0"}
+          </p>
+        </div>
+
         <p className="login-text">
           Não tem uma conta? <Link to="/cadastrar" className="login-register-link">Criar Conta</Link>
         </p>
