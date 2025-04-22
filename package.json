@@ -9,27 +9,22 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@react-oauth/google": "^0.12.1",
-    "axios": "^1.8.4",
-    "bcrypt": "^5.1.1",
-    "chalk": "^5.4.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "jwt-decode": "^4.0.0",
-    "lucide-react": "^0.487.0",
-    "mysql": "^2.18.1",
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.1.1",
-    "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1",
-    "vite-plugin-svgr": "^4.3.0"
-  },
+  
+ "dependencies": {
+  "@react-oauth/google": "^0.12.1",
+  "axios": "^1.4.0",
+  "bcrypt": "^5.1.1",
+  "cors": "^2.8.5",
+  "express": "^4.18.2",
+  "jsonwebtoken": "^9.0.0",
+  "mysql": "^2.18.1",
+  "prop-types": "^15.8.1",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-responsive-carousel": "^3.2.23",
+  "react-router-dom": "^6.11.1",
+  "react-slick": "^0.30.3"
+},
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@svgr/rollup": "^8.1.0",
