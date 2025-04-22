@@ -1,0 +1,63 @@
+.container {
+  padding: 20px;
+}
+
+.titulo {
+  color: #3f4640;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px; /** Da espaço entre as seções */
+}
+
+/*  faz imagem do missao fica
+ acima do texto */
+.texto-abaixo {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Define a largura do texto*/
+.text {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Imagem estilizada */
+.image {
+  width: 150px;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+/* alterna a posição*/
+.invertido {
+  flex-direction: row-reverse;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.valores {
+  display: flex;
+  flex-direction: column; /* Deixa o texto acima e a imagem abaixo */
+  align-items: center; /* Centraliza no meio */
+  text-align: center;
+}
+.valores img {
+  margin-top: 10px; /* Dá um espaço entre o texto e a imagem */
+}
+

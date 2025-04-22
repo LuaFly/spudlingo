@@ -1,18 +1,21 @@
 import express from "express";
 import cors from "cors";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken"; // <-- Importa JWT
 import db from "./db.js";
 import formIdiomaRoutes from "./form_idioma.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 
 app.use("/", formIdiomaRoutes);
 
-
+const SECRET_KEY = process.env.JWT_SECRET;
+// Rota de cadastro
 app.post('/cadastrar', async (req, res) => {
     const { username, email, senha } = req.body;
 
@@ -41,7 +44,7 @@ app.post('/cadastrar', async (req, res) => {
     });
 });
 
-// Rota de Login
+// Rota de Login com JWT
 app.post('/login', (req, res) => {
     const { email, senha } = req.body;
 
@@ -65,7 +68,23 @@ app.post('/login', (req, res) => {
                 return res.status(401).json({ error: "Senha incorreta" });
             }
 
-            res.json({ msg: "Login bem-sucedido!", usuario: { email: usuario.email } });
+            // Gera token JWT
+            const token = jwt.sign(
+                { id: usuario.user_id, email: usuario.email },
+                SECRET_KEY,
+                { expiresIn: '1h' }
+            );
+            
+
+            res.json({
+                msg: "Login bem-sucedido!",
+                token,
+                usuario: {
+                    id: usuario.id,
+                    email: usuario.email,
+                    username: usuario.username
+                }
+            });
         });
     });
 });
