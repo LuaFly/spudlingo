@@ -9,6 +9,9 @@ import flag2 from '../../assets/flag2.png'; // Mandarim
 import flag3 from '../../assets/flag3.png'; // Finlandês
 import flag4 from '../../assets/flag4.png'; // Espanhol
 import flag5 from '../../assets/flag5.png'; // Português
+import { jwtDecode } from "jwt-decode";
+import { User } from "lucide-react";
+
 
 const idiomas = [
     { nome: "Inglês", bandeira: flag1 },
@@ -46,11 +49,22 @@ const Inicio = () => {
         if (hasError) return;
 
         try {
-            const response = await axios.post("http://localhost:8344/form_idioma", {
-                user_id: 1, //Arrumar pra pegar do banco certinho
-                language_code: idioma.slice(0, 2).toUpperCase(),
-                level: nivel
-            });
+            const token = localStorage.getItem("token");
+            const decoded = jwtDecode(token);
+            const userId = decoded.id; // ou 'decoded.user_id', dependendo de como seu back-end gera o token
+            console.log(token)
+            const response = await axios.post(
+                "http://localhost:8344/form_idioma",
+                {
+                  language_code: idioma.slice(0, 2).toUpperCase(),
+                  level: nivel
+                },
+                {
+                  headers: {
+                    Authorization: `Bearer ${token}`
+                  }
+                }
+              );          
 
             if (response.data.msg) {
                 navigate("/feed");

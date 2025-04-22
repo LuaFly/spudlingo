@@ -1,8 +1,13 @@
 Para rodar a aplicação com o back: 
-npm install @react-oauth/google
+
+npm install @react-oauth/google jwt-decode express mysql cors axios bcrypt jsonwebtoken dotenv
+npm install chalk
 npm install jwt-decode
-npm install express mysql cors axios bcrypt
+
 node login.js (deixar rodando em outro terminal enquanto a aplicação funciona dentro da pasta back)
+
+Para rodar o front: 
+npm install lucide-react
 npm run dev (para rodar o front)
 
 No MYSQL RODAR:

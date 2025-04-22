@@ -10,7 +10,7 @@ import Feed from "./pages/pos_login/feed";
 import Missao from './pages/missao';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import PrivateRoute from './components/PrivateRoute'; // <== importa aqui
+import PrivateRoute from './components/PrivateRoute'; 
 
 function App() {
     return (

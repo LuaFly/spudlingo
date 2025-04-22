@@ -88,6 +88,20 @@
   .login-register-link:hover {
     text-decoration: underline;
   }
+
+  .login-mensagem-wrapper {
+    min-height: 24px;
+    margin-top: 10px;
+  }
+  
+  .login-mensagem {
+    color: red;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    white-space: pre-line;
+  }
+  
   
   /* Responsividade */
   @media (max-width: 768px) {
