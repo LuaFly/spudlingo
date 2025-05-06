@@ -8,6 +8,8 @@ import Login from './pages/login/login';
 import Cadastrar from './pages/cadastro/cadastrar'; 
 import Feed from "./pages/pos_login/feed";
 import Missao from './pages/missao';
+import Aula1 from './pages/pos_login/ingles/aula/aula1';
+
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import PrivateRoute from './components/PrivateRoute'; 
@@ -37,6 +39,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <Feed />
+                            </PrivateRoute>
+                        } 
+                    />
+                    <Route 
+                        path="/aula1" 
+                        element={
+                            <PrivateRoute>
+                                <Aula1 />
                             </PrivateRoute>
                         } 
                     />
